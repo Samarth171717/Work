@@ -6,8 +6,6 @@ class Solution(object):
                 return True
             seen.add(num)
         return False
-
-
         """
         :type nums: List[int]
         :rtype: bool
