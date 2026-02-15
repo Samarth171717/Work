@@ -4,7 +4,7 @@ class Solution(object):
         for ch in s:
             seen[ch]=seen.get(ch,0)+1
         for i,ch in enumerate(s):
-            if seen[s[i]]==1:
+            if seen[ch] == 1:
                 return i
         return -1
         """
