@@ -3,7 +3,7 @@ class Solution(object):
         set1=set(nums1)
         result=set()
         for num in nums2:
-            if num in  nums1:
+            if num in nums1:
                 result.add(num)
         return list(result)
         """
