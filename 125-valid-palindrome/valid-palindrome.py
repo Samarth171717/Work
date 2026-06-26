@@ -1,18 +1,15 @@
-class Solution(object):
-    def isPalindrome(self, s):
-        left,right=0,len(s)-1
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        clean=""
+        for ch in s:
+            if ch.isalnum():
+                clean+=ch.lower()
+        left=0
+        right=len(clean)-1
         while left<right:
-            while left<right and not s[left].isalnum():
-                left+=1
-            while left<right and not s[right].isalnum():
-                right-=1
-            if s[left].lower()!=s[right].lower():
+            if clean[left]!=clean[right]:
                 return False
             left+=1
             right-=1
         return True
-        """
-        :type s: str
-        :rtype: bool
-        """
         
