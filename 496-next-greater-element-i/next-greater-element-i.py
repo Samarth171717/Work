@@ -1,18 +1,12 @@
-class Solution(object):
-    def nextGreaterElement(self, nums1, nums2):
-        stack=[]
-        next_greater={}
-        for num in nums2:
-            while stack and num>stack[-1]:
-                smaller=stack.pop()
-                next_greater[smaller]=num
-            stack.append(num)
-        for num in stack:
-            next_greater[num]=-1
-        return [next_greater[num]for num in nums1]
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
-        
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        result=[]
+        for num in nums1:
+            idx=nums2.index(num)
+            greater=-1
+            for j in range(idx+1,len(nums2)):
+                if nums2[j]>num:
+                    greater=nums2[j]
+                    break
+            result.append(greater)
+        return result
