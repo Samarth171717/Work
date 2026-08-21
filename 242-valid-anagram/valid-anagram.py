@@ -1,20 +1,17 @@
-class Solution(object):
-    def isAnagram(self, s, t):
-        if len(s)!=len(t):
-            return False
-        count={}
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        seen={}
         for ch in s:
-            count[ch]=count.get(ch,0)+1
+            seen[ch]=seen.get(ch,0)+1
+
+        seen1={}
         for ch in t:
-            if ch not in count:
-                return False
-            count[ch]-=1
-            if count[ch]<0:
-                return False
-        return True
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
+            seen1[ch]=seen1.get(ch,0)+1
+            
+        if seen1==seen:
+            return True
+        return False
+
+    
+
         
