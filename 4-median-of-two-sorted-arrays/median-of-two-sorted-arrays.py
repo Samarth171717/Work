@@ -36,5 +36,4 @@ class Solution:
             elif left1>right2:
                 right=i-1
             else:
-                left=i+1    
-        return median
+                left=i+1
