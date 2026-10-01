@@ -9,7 +9,7 @@ class Solution:
                 left-=1
                 right+=1
             current=s[left+1:right]
-            if len(current)>len(longest):
+            if len(longest)<len(current):
                 longest=current
             
             left=i
@@ -19,6 +19,7 @@ class Solution:
                 left-=1
                 right+=1
             current=s[left+1:right]
-            if len(current)>len(longest):
+            if len(longest)<len(current):
                 longest=current
+            
         return longest
